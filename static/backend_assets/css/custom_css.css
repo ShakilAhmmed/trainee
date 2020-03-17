@@ -1,0 +1,22 @@
+.has-ul{
+	color: black !important;
+}
+.nav_items > a{
+	color: black !important;
+}
+.text-size-mini{
+	color: black !important;
+}
+.navigation-header{
+	background-color: rgba(167, 167, 167, 0.1);
+	color: black !important;
+}
+.sidebar-xs .sidebar-main .navigation-main>li>a>span{
+	color: black !important;
+}
+.sidebar-xs .sidebar-main .navigation-main>li>ul{
+	background-color:#fff !important;
+}
+.sidebar-xs .sidebar-main .navigation-main>li .has-ul>span{
+	color: black !important;
+}

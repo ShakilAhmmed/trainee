@@ -1,0 +1,48 @@
+{% include 'partials/_backend_head.html'  with title=title %}
+{% include 'partials/_backend_nav.html' %}
+<div id="app">
+    <div class="page-container">
+
+        <!-- Page content -->
+        <div class="page-content">
+
+            <!-- Main sidebar -->
+            <div class="sidebar sidebar-main">
+                <div class="sidebar-content">
+
+                    <!-- User menu -->
+                    {% include 'partials/_backend_usermenu.html' %}
+                    <!-- /user menu -->
+
+
+                    <!-- Main navigation -->
+                    {% include 'partials/_backend_sidebar.html' %}
+                    <!-- /main navigation -->
+
+                </div>
+            </div>
+            <!-- /main sidebar -->
+
+
+            <!-- Main content -->
+            <div class="content-wrapper">
+
+                <!-- Page header -->
+                {% include 'partials/_page_header.html' with title=title %}
+                <!-- /page header -->
+
+
+                <!-- Content area -->
+                <div class="content">
+                    {% block main_content %}
+                    {% endblock main_content %}
+                </div>
+                <!-- /page content -->
+                {% include 'partials/_backend_footer.html' %}
+            </div>
+        </div>
+    </div>
+</div>
+{% include 'partials/_backend_js.html' %}
+</body>
+</html>
