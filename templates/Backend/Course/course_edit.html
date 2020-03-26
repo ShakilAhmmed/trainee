@@ -1,0 +1,81 @@
+{% extends "index.html" %}
+{% block main_content %}
+    <form class="form-horizontal" method="POST" action="">
+    {% csrf_token %}
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Course Edit</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="panel-body">
+
+                      <div class="form-group">
+                        <label class="col-lg-3 control-label" for="{{ form.course_code.id_for_label }}">{{ form.course_code.label }}</label>
+                        <div class="col-lg-9">
+                          {{ form.course_code }}
+                          <span class="text-danger">{{ form.course_code.errors }}</span>
+
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="col-lg-3 control-label" for="{{ form.course_name.id_for_label }}">{{ form.course_name.label }}</label>
+                        <div class="col-lg-9">
+                          {{ form.course_name }}
+                          <span class="text-danger">{{ form.course_name.errors }}</span>
+
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="col-lg-3 control-label" for="{{ form.course_duration.id_for_label }}">{{ form.course_duration.label }}</label>
+                        <div class="col-lg-9">
+                          {{ form.course_duration }}
+                          <span class="text-danger">{{ form.course_duration.errors }}</span>
+
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="col-lg-3 control-label" for="{{ form.course_fee.id_for_label }}">{{ form.course_fee.label }}</label>
+                        <div class="col-lg-9">
+                          {{ form.course_fee }}
+                          <span class="text-danger">{{ form.course_fee.errors }}</span>
+
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="col-lg-3 control-label" for="{{ form.course_content.id_for_label }}">{{ form.course_content.label }}</label>
+                        <div class="col-lg-9">
+                          {{ form.course_content }}
+                          <span class="text-danger">{{ form.course_content.errors }}</span>
+
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="col-lg-3 control-label" for="{{ form.course_status.id_for_label }}">{{ form.course_status.label }}</label>
+                        <div class="col-lg-9">
+                          {{ form.course_status }}
+                          <span class="text-danger">{{ form.course_status.errors }}</span>
+
+                        </div>
+                      </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-success">Save</button>
+                    </div>
+
+                </div>
+            </div>
+    </form>
+<script src="https://cdn.ckeditor.com/4.13.0/standard/ckeditor.js"></script>
+<script type="text/javascript">
+  CKEDITOR.replace('editor');
+</script>
+{% endblock main_content %}
