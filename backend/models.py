@@ -17,4 +17,4 @@ class Venue(TimeStamp):
     venue_total_room = models.IntegerField()
     venue_total_capacity = models.IntegerField()
     venue_address = models.TextField()
-    venue_status = models.BooleanField(default=1)
+    venue_status = models.IntegerField(default=1)
