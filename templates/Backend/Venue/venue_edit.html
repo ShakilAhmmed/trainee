@@ -1,17 +1,11 @@
 {% extends "index.html" %}
 {% block main_content %}
-    <button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#exampleModal"
-            style="margin-top: -3%;">
-        Add New Venue
-    </button>
     <form class="form-horizontal" method="POST" action="">
     {% csrf_token %}
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-             aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Add New Venue</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Venue Edit</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -105,99 +99,11 @@
 
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                         <button type="submit" class="btn btn-success">Save</button>
                     </div>
 
                 </div>
             </div>
-        </div>
     </form>
-
-    <div class="panel panel-flat" style="margin-top: 5%;">
-        <div class="panel-heading">
-            <h5 class="panel-title"></h5>
-            <div class="heading-elements">
-                <ul class="icons-list">
-                    <li><a data-action="collapse"></a></li>
-                    <li><a data-action="reload"></a></li>
-                    <li><a data-action="close"></a></li>
-                </ul>
-            </div>
-            <div id="DataTables_Table_2_filter" class="dataTables_filter">
-                <select class="form-control">
-                    <option>--Select--</option>
-                    <option>10</option>
-                    <option>20</option>
-                    <option>30</option>
-                    <option>50</option>
-                </select>
-            </div>
-            <div id="DataTables_Table_2_filter" class="dataTables_filter">
-                <label>
-                    <input type="search" class="" placeholder="Type to filter..." aria-controls="DataTables_Table_2">
-                </label>
-            </div>
-
-        </div>
-
-
-        <table class="table datatable-pagination">
-            <thead>
-            <tr>
-                <th>Sl No</th>
-                <th>Venue Name</th>
-                <th>Venue Mobile</th>
-                <th>Venue Email</th>
-                <th>Venue Total Room</th>
-                <th>Venue Total Capacity</th>
-                <th>Venue Status</th>
-                <th class="text-center">Actions</th>
-            </tr>
-            </thead>
-            <tbody>
-            {% for venue_data in all_venues %}
-            <tr>
-                <td>{{ forloop.counter }}</td>
-                <td>{{ venue_data.venue_name }}</td>
-                <td>{{ venue_data.venue_mobile }}</td>
-                <td>{{ venue_data.venue_email }}</td>
-                <td>{{ venue_data.venue_total_room }}</td>
-                <td>{{ venue_data.venue_total_capacity }}</td>
-                <td>
-                    {% if  venue_data.venue_status == 1%}
-                        <span class='text-success'><i class="icon icon-circle-small"></i>&nbsp;Active</span>
-                    {% else %}
-                        <span class='text-danger'><i class="icon icon-circle-small"></i>&nbsp;Inactive</span>
-                    {% endif %}
-
-                </td>
-                <td class="text-center">
-                  <a href="{% url "backend:venue_edit" pk=venue_data.pk %}">
-                      <button class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
-                  </a>
-                    <a href="{% url "backend:venue_status_change" pk=venue_data.pk %}">
-                        {% if  venue_data.venue_status == 1%}
-                             <button class="btn btn-info"><i class="fa fa-refresh" aria-hidden="true"></i></button>
-                        {% else %}
-                            <button class="btn btn-success"><i class="fa fa-refresh" aria-hidden="true"></i></button>
-                        {% endif %}
-                    </a>
-                    <a href="{% url "backend:venue_delete" pk=venue_data.pk %}">
-                        <button class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></button>
-                    </a>
-                </td>
-            </tr>
-            {% empty %}
-                <tr>
-                    <td rowspan="8">No Venue Found</td>
-                </tr>
-            {% endfor %}
-
-
-            </tbody>
-        </table>
-    </div>
-
 
 {% endblock main_content %}

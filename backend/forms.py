@@ -7,7 +7,7 @@ class VenueForm(forms.ModelForm):
     class Meta:
         model = Venue
         fields = "__all__"
-        CHOICES = ((1, 'Active'), (2, 'Inactive'))
+        CHOICES = ((1, 'Active'), (0, 'Inactive'))
         widgets = {
             'venue_name': forms.TextInput(attrs={'class': 'form-control'}),
             'venue_mobile': forms.TextInput(attrs={'class': 'form-control'}),

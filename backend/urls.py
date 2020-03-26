@@ -1,8 +1,8 @@
-from django.urls import path
+from django.urls import path,include
 from . import views
 
 app_name = "backend"
 urlpatterns = [
     path('', views.home, name="home"),
-    path('venue', views.venue, name="venue")
+    path('venue/', include("backend.venue_urls"))
 ]
