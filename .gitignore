@@ -2,6 +2,7 @@ venv
 db.sqlite3
 .idea
 .vscode
+mysql
 backend/__pycache__/*
 backend/migrations/__pycache__/*
 backend/__pycache__/*
