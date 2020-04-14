@@ -14,3 +14,12 @@ pip install requirements.txt
 python manage.py makemigrations
 python manage.py migrate
 python manage.py runserver
+
+## Using Docker
+```
+sudo docker-compose up 
+```
+## Migration
+```
+sudo docker exec traineemanagement_web_1 python manage.py migrate 
+```
