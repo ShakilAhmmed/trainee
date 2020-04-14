@@ -15,11 +15,12 @@ python manage.py makemigrations
 python manage.py migrate
 python manage.py runserver
 
-## Using Docker
 ```
+# Using Docker
+```bash
 sudo docker-compose up 
 ```
 ## Migration
-```
+```bash
 sudo docker exec traineemanagement_web_1 python manage.py migrate 
 ```
