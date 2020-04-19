@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'backend.apps.BackendConfig',
-    'debug_toolbar'
+    'debug_toolbar',
+    'django_filters'
 
 ]
 
@@ -86,11 +87,22 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'trainee_management',
         'USER': 'root',
-        'PASSWORD': 'root',
-        'HOST': 'db',
+        'PASSWORD': '',
+        'HOST': '127.0.0.1',
         'PORT': '3306'
     }
 }
+# For Docker
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'trainee_management',
+#         'USER': 'root',
+#         'PASSWORD': 'root',
+#         'HOST': 'db',
+#         'PORT': '3306'
+#     }
+# }
 # sudo docker exec traineemanagement_web_1 python manage.py migrate
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
