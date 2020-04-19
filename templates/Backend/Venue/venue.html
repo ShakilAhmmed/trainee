@@ -5,7 +5,7 @@
         Add New Venue
     </button>
     <form class="form-horizontal" method="POST" action="">
-    {% csrf_token %}
+        {% csrf_token %}
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
              aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -32,7 +32,8 @@
                                     <div class="panel-body">
 
                                         <div class="form-group">
-                                            <label class="col-lg-3 control-label" for="{{ form.venue_name.id_for_label }}">{{ form.venue_name.label }}</label>
+                                            <label class="col-lg-3 control-label"
+                                                   for="{{ form.venue_name.id_for_label }}">{{ form.venue_name.label }}</label>
                                             <div class="col-lg-9">
                                                 {{ form.venue_name }}
                                                 <span class="text-danger">{{ form.venue_name.errors }}</span>
@@ -41,7 +42,8 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label class="col-lg-3 control-label" for="{{ form.venue_mobile.id_for_label }}">{{ form.venue_mobile.label }}</label>
+                                            <label class="col-lg-3 control-label"
+                                                   for="{{ form.venue_mobile.id_for_label }}">{{ form.venue_mobile.label }}</label>
                                             <div class="col-lg-9">
                                                 {{ form.venue_mobile }}
                                                 <span class="text-danger">{{ form.venue_mobile.errors }}</span>
@@ -50,7 +52,8 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label class="col-lg-3 control-label" for="{{ form.venue_email.id_for_label }}">{{ form.venue_email.label }}</label>
+                                            <label class="col-lg-3 control-label"
+                                                   for="{{ form.venue_email.id_for_label }}">{{ form.venue_email.label }}</label>
                                             <div class="col-lg-9">
                                                 {{ form.venue_email }}
                                                 <span class="text-danger">{{ form.venue_email.errors }}</span>
@@ -59,7 +62,8 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label class="col-lg-3 control-label" for="{{ form.venue_total_room.id_for_label }}">{{ form.venue_total_room.label }}</label>
+                                            <label class="col-lg-3 control-label"
+                                                   for="{{ form.venue_total_room.id_for_label }}">{{ form.venue_total_room.label }}</label>
                                             <div class="col-lg-9">
                                                 {{ form.venue_total_room }}
                                                 <span class="text-danger">{{ form.venue_total_room.errors }}</span>
@@ -69,7 +73,8 @@
 
 
                                         <div class="form-group">
-                                            <label class="col-lg-3 control-label" for="{{ form.venue_total_capacity.id_for_label }}">{{ form.venue_total_capacity.label }}</label>
+                                            <label class="col-lg-3 control-label"
+                                                   for="{{ form.venue_total_capacity.id_for_label }}">{{ form.venue_total_capacity.label }}</label>
                                             <div class="col-lg-9">
                                                 {{ form.venue_total_capacity }}
                                                 <span class="text-danger">{{ form.venue_total_capacity.errors }}</span>
@@ -78,7 +83,8 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label class="col-lg-3 control-label" for="{{ form.venue_address.id_for_label }}">{{ form.venue_address.label }}</label>
+                                            <label class="col-lg-3 control-label"
+                                                   for="{{ form.venue_address.id_for_label }}">{{ form.venue_address.label }}</label>
                                             <div class="col-lg-9">
                                                 {{ form.venue_address }}
                                                 <span class="text-danger">{{ form.venue_address.errors }}</span>
@@ -87,7 +93,8 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label class="col-lg-3 control-label" for="{{ form.venue_status.id_for_label }}">{{ form.venue_status.label }}</label>
+                                            <label class="col-lg-3 control-label"
+                                                   for="{{ form.venue_status.id_for_label }}">{{ form.venue_status.label }}</label>
                                             <div class="col-lg-9">
                                                 {{ form.venue_status }}
                                                 <span class="text-danger">{{ form.venue_status.errors }}</span>
@@ -124,20 +131,29 @@
                     <li><a data-action="close"></a></li>
                 </ul>
             </div>
-            <div id="DataTables_Table_2_filter" class="dataTables_filter">
-                <select class="form-control">
-                    <option>--Select--</option>
-                    <option>10</option>
-                    <option>20</option>
-                    <option>30</option>
-                    <option>50</option>
-                </select>
-            </div>
-            <div id="DataTables_Table_2_filter" class="dataTables_filter">
-                <label>
-                    <input type="search" class="" placeholder="Type to filter..." aria-controls="DataTables_Table_2">
-                </label>
-            </div>
+            <form action="" method="GET">
+                <div id="DataTables_Table_2_filter" class="dataTables_filter">
+                    <select class="form-control">
+                        <option>--Select--</option>
+                        <option>10</option>
+                        <option>20</option>
+                        <option>30</option>
+                        <option>50</option>
+                    </select>
+                </div>
+                <div id="DataTables_Table_2_filter" class="dataTables_filter">
+                    {{ venue_filer_form.form.venue_name }}
+                </div>
+                <div id="DataTables_Table_2_filter" class="dataTables_filter">
+                    {{ venue_filer_form.form.venue_mobile }}
+                </div>
+                <div id="DataTables_Table_2_filter" class="dataTables_filter">
+                    {{ venue_filer_form.form.venue_status }}
+                </div>
+                <div id="DataTables_Table_2_filter" class="dataTables_filter">
+                    <button class="btn btn-success"><i class="fa fa-search"></i></button>
+                </div>
+            </form>
 
         </div>
 
@@ -157,46 +173,63 @@
             </thead>
             <tbody>
             {% for venue_data in all_venues %}
-            <tr>
-                <td>{{ forloop.counter }}</td>
-                <td>{{ venue_data.venue_name }}</td>
-                <td>{{ venue_data.venue_mobile }}</td>
-                <td>{{ venue_data.venue_email }}</td>
-                <td>{{ venue_data.venue_total_room }}</td>
-                <td>{{ venue_data.venue_total_capacity }}</td>
-                <td>
-                    {% if  venue_data.venue_status == 1%}
-                        <span class='text-success'><i class="icon icon-circle-small"></i>&nbsp;Active</span>
-                    {% else %}
-                        <span class='text-danger'><i class="icon icon-circle-small"></i>&nbsp;Inactive</span>
-                    {% endif %}
-
-                </td>
-                <td class="text-center">
-                  <a href="{% url "backend:venue_edit" pk=venue_data.pk %}">
-                      <button class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
-                  </a>
-                    <a href="{% url "backend:venue_status_change" pk=venue_data.pk %}">
-                        {% if  venue_data.venue_status == 1%}
-                             <button class="btn btn-info"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ venue_data.venue_name }}</td>
+                    <td>{{ venue_data.venue_mobile }}</td>
+                    <td>{{ venue_data.venue_email }}</td>
+                    <td>{{ venue_data.venue_total_room }}</td>
+                    <td>{{ venue_data.venue_total_capacity }}</td>
+                    <td>
+                        {% if  venue_data.venue_status == 1 %}
+                            <span class='text-success'><i class="icon icon-circle-small"></i>&nbsp;Active</span>
                         {% else %}
-                            <button class="btn btn-success"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+                            <span class='text-danger'><i class="icon icon-circle-small"></i>&nbsp;Inactive</span>
                         {% endif %}
-                    </a>
-                    <a href="{% url "backend:venue_delete" pk=venue_data.pk %}">
-                        <button class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></button>
-                    </a>
-                </td>
-            </tr>
+
+                    </td>
+                    <td class="text-center">
+                        <a href="{% url "backend:venue_edit" pk=venue_data.pk %}">
+                            <button class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                            </button>
+                        </a>
+                        <a href="{% url "backend:venue_status_change" pk=venue_data.pk %}">
+                            {% if  venue_data.venue_status == 1 %}
+                                <button class="btn btn-info"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+                            {% else %}
+                                <button class="btn btn-success"><i class="fa fa-refresh" aria-hidden="true"></i>
+                                </button>
+                            {% endif %}
+                        </a>
+                        <a href="{% url "backend:venue_delete" pk=venue_data.pk %}">
+                            <button class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                        </a>
+                    </td>
+                </tr>
             {% empty %}
                 <tr>
                     <td rowspan="8">No Venue Found</td>
                 </tr>
             {% endfor %}
-
-
             </tbody>
         </table>
+        <div class="pagination">
+                <span class="step-links">
+                    {% if all_venues.has_previous %}
+                        <a class="btn" href="?page=1">&laquo; First</a>
+                        <a  class="btn" href="?page={{ all_venues.previous_page_number }}">Previous</a>
+                    {% endif %}
+
+                    <span class="current">
+                        Page {{ all_venues.number }} of {{ all_venues.paginator.num_pages }}.
+                    </span>
+
+                    {% if all_venues.has_next %}
+                        <a class="btn" href="?page={{ all_venues.next_page_number }}">Next</a>
+                        <a class="btn" href="?page={{ all_venues.paginator.num_pages }}">Last &raquo;</a>
+                    {% endif %}
+                </span>
+        </div>
     </div>
 
 

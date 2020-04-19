@@ -12,7 +12,7 @@ services:
       MYSQL_PASSWORD: "root"
       MYSQL_ROOT_PASSWORD: "root"
     ports:
-      - "8306:3306"
+      - "8307:3306"
   web:
     build: .
     command: python manage.py runserver 0.0.0.0:8000
