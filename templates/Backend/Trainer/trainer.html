@@ -5,7 +5,7 @@
             style="margin-top: -3%;">
         Add New Trainee
     </button>
-    <form class="form-horizontal" method="POST" action="">
+    <form class="form-horizontal" method="POST" action="" enctype="multipart/form-data">
     {% csrf_token %}
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
              aria-hidden="true" >
@@ -49,6 +49,15 @@
 
                                             </div>
                                         </div>
+
+                                        <div class="form-group">
+                                                <label class="col-lg-3 control-label" for="{{ form.date_of_birth.id_for_label }}">{{ form.date_of_birth.label }}</label>
+                                                <div class="col-lg-9">
+                                                    {{ form.date_of_birth }}
+                                                    <span class="text-danger">{{ form.date_of_birth.errors }}</span>
+
+                                                </div>
+                                            </div>
 
                                         <div class="form-group">
                                             <label class="col-lg-3 control-label" for="{{ form.birth_reg_no.id_for_label }}">{{ form.birth_reg_no.label }}</label>
@@ -210,7 +219,7 @@
                                           <tr v-for="(course_map , index) in CourseMapList">
                                               <td v-text="index+1"></td>
                                               <td>
-                                                <select class="form-control" name="">
+                                                <select class="form-control" name="venue[]">
                                                   <option></option>
                                                   {% for venue_data in all_venue %}
                                                     <option value="{{venue_data.pk}}">{{venue_data.venue_name}}</option>
@@ -218,7 +227,7 @@
                                                 </select>
                                               </td>
                                               <td>
-                                                <select class="form-control" name="">
+                                                <select class="form-control" name="course[]">
                                                   <option></option>
                                                   {% for course_data in all_course %}
                                                     <option value="{{course_data.pk}}">{{course_data.course_name}} - {{course_data.course_code}}</option>
@@ -296,8 +305,24 @@
                 <td>{{ trainer_data.date_of_birth }}</td>
                 <td>{{ trainer_data.national_id }}</td>
                 <td>{{ trainer_data.birth_reg_no }}</td>
-                <td>{{ trainer_data.gender }} </td>
-                <td>{{ trainer_data.religion }}</td>
+                <td>
+                    {% if True == trainer_data.gender %}
+                        Male
+                    {% else %}
+                        Female
+                    {% endif %}
+                </td>
+                <td>
+                    {% if trainer_data.religion == 1 %}
+                        Islam
+                    {% elif  trainer_data.religion == 2 %}
+                        Hindu
+                    {% elif  trainer_data.religion == 1%}
+                        Budha
+                    {% else %}
+                        Khristian
+                    {% endif %}
+                </td>
                 <td>{{ trainer_data.mobile_number }}</td>
                 <td>{{ trainer_data.email }}</td>
                 <td class="text-center">
