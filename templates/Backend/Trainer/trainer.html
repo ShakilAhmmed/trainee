@@ -1,57 +1,60 @@
 {% extends "index.html" %}
 {% block main_content %}
-<div id="trainer">
-    <button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#exampleModal"
-            style="margin-top: -3%;">
-        Add New Trainee
-    </button>
-    <form class="form-horizontal" method="POST" action="" enctype="multipart/form-data">
-    {% csrf_token %}
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-             aria-hidden="true" >
-            <div class="modal-dialog" role="document" >
-                <div class="modal-content" style="width: 1200px;margin-left: -40%;">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Add New Trainee</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="panel panel-flat">
-                                    <div class="panel-heading">
-                                        <div class="heading-elements">
-                                            <ul class="icons-list">
-                                                <li><a data-action="reload"></a></li>
-                                            </ul>
-                                        </div>
-
-                                    </div>
-
-                                    <div class="panel-body">
-
-                                        <div class="form-group">
-                                            <label class="col-lg-3 control-label" for="{{ form.trainer_name.id_for_label }}">{{ form.trainer_name.label }}</label>
-                                            <div class="col-lg-9">
-                                                {{ form.trainer_name }}
-                                                <span class="text-danger">{{ form.trainer_name.errors }}</span>
-
+    <div id="trainer">
+        <button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#exampleModal"
+                style="margin-top: -3%;">
+            Add New Trainee
+        </button>
+        <form class="form-horizontal" method="POST" action="" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                 aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content" style="width: 1200px;margin-left: -40%;">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Add New Trainee</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="panel panel-flat">
+                                        <div class="panel-heading">
+                                            <div class="heading-elements">
+                                                <ul class="icons-list">
+                                                    <li><a data-action="reload"></a></li>
+                                                </ul>
                                             </div>
+
                                         </div>
 
-                                        <div class="form-group">
-                                            <label class="col-lg-3 control-label" for="{{ form.national_id.id_for_label }}">{{ form.national_id.label }}</label>
-                                            <div class="col-lg-9">
-                                                {{ form.national_id }}
-                                                <span class="text-danger">{{ form.national_id.errors }}</span>
+                                        <div class="panel-body">
 
+                                            <div class="form-group">
+                                                <label class="col-lg-3 control-label"
+                                                       for="{{ form.trainer_name.id_for_label }}">{{ form.trainer_name.label }}</label>
+                                                <div class="col-lg-9">
+                                                    {{ form.trainer_name }}
+                                                    <span class="text-danger">{{ form.trainer_name.errors }}</span>
+
+                                                </div>
                                             </div>
-                                        </div>
 
-                                        <div class="form-group">
-                                                <label class="col-lg-3 control-label" for="{{ form.date_of_birth.id_for_label }}">{{ form.date_of_birth.label }}</label>
+                                            <div class="form-group">
+                                                <label class="col-lg-3 control-label"
+                                                       for="{{ form.national_id.id_for_label }}">{{ form.national_id.label }}</label>
+                                                <div class="col-lg-9">
+                                                    {{ form.national_id }}
+                                                    <span class="text-danger">{{ form.national_id.errors }}</span>
+
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label class="col-lg-3 control-label"
+                                                       for="{{ form.date_of_birth.id_for_label }}">{{ form.date_of_birth.label }}</label>
                                                 <div class="col-lg-9">
                                                     {{ form.date_of_birth }}
                                                     <span class="text-danger">{{ form.date_of_birth.errors }}</span>
@@ -59,319 +62,334 @@
                                                 </div>
                                             </div>
 
-                                        <div class="form-group">
-                                            <label class="col-lg-3 control-label" for="{{ form.birth_reg_no.id_for_label }}">{{ form.birth_reg_no.label }}</label>
-                                            <div class="col-lg-9">
-                                                {{ form.birth_reg_no }}
-                                                <span class="text-danger">{{ form.birth_reg_no.errors }}</span>
+                                            <div class="form-group">
+                                                <label class="col-lg-3 control-label"
+                                                       for="{{ form.birth_reg_no.id_for_label }}">{{ form.birth_reg_no.label }}</label>
+                                                <div class="col-lg-9">
+                                                    {{ form.birth_reg_no }}
+                                                    <span class="text-danger">{{ form.birth_reg_no.errors }}</span>
 
+                                                </div>
                                             </div>
-                                        </div>
 
-                                        <div class="form-group">
-                                            <label class="col-lg-3 control-label" for="{{ form.gender.id_for_label }}">{{ form.gender.label }}</label>
-                                            <div class="col-lg-9">
-                                                {{ form.gender }}
-                                                <span class="text-danger">{{ form.gender.errors }}</span>
+                                            <div class="form-group">
+                                                <label class="col-lg-3 control-label"
+                                                       for="{{ form.gender.id_for_label }}">{{ form.gender.label }}</label>
+                                                <div class="col-lg-9">
+                                                    {{ form.gender }}
+                                                    <span class="text-danger">{{ form.gender.errors }}</span>
 
+                                                </div>
                                             </div>
-                                        </div>
 
 
-                                        <div class="form-group">
-                                            <label class="col-lg-3 control-label" for="{{ form.religion.id_for_label }}">{{ form.religion.label }}</label>
-                                            <div class="col-lg-9">
-                                                {{ form.religion }}
-                                                <span class="text-danger">{{ form.religion.errors }}</span>
+                                            <div class="form-group">
+                                                <label class="col-lg-3 control-label"
+                                                       for="{{ form.religion.id_for_label }}">{{ form.religion.label }}</label>
+                                                <div class="col-lg-9">
+                                                    {{ form.religion }}
+                                                    <span class="text-danger">{{ form.religion.errors }}</span>
 
+                                                </div>
                                             </div>
-                                        </div>
 
-                                        <div class="form-group">
-                                            <label class="col-lg-3 control-label" for="{{ form.mobile_number.id_for_label }}">{{ form.mobile_number.label }}</label>
-                                            <div class="col-lg-9">
-                                                {{ form.mobile_number }}
-                                                <span class="text-danger">{{ form.mobile_number.errors }}</span>
+                                            <div class="form-group">
+                                                <label class="col-lg-3 control-label"
+                                                       for="{{ form.mobile_number.id_for_label }}">{{ form.mobile_number.label }}</label>
+                                                <div class="col-lg-9">
+                                                    {{ form.mobile_number }}
+                                                    <span class="text-danger">{{ form.mobile_number.errors }}</span>
 
+                                                </div>
                                             </div>
-                                        </div>
 
-                                        <div class="form-group">
-                                            <label class="col-lg-3 control-label" for="{{ form.email.id_for_label }}">{{ form.email.label }}</label>
-                                            <div class="col-lg-9">
-                                                {{ form.email }}
-                                                <span class="text-danger">{{ form.email.errors }}</span>
+                                            <div class="form-group">
+                                                <label class="col-lg-3 control-label"
+                                                       for="{{ form.email.id_for_label }}">{{ form.email.label }}</label>
+                                                <div class="col-lg-9">
+                                                    {{ form.email }}
+                                                    <span class="text-danger">{{ form.email.errors }}</span>
 
+                                                </div>
                                             </div>
-                                        </div>
 
-                                        <div class="form-group">
-                                            <label class="col-lg-3 control-label" for="{{ form.exp_years.id_for_label }}">{{ form.exp_years.label }}</label>
-                                            <div class="col-lg-9">
-                                                {{ form.exp_years }}
-                                                <span class="text-danger">{{ form.exp_years.errors }}</span>
+                                            <div class="form-group">
+                                                <label class="col-lg-3 control-label"
+                                                       for="{{ form.exp_years.id_for_label }}">{{ form.exp_years.label }}</label>
+                                                <div class="col-lg-9">
+                                                    {{ form.exp_years }}
+                                                    <span class="text-danger">{{ form.exp_years.errors }}</span>
 
+                                                </div>
                                             </div>
-                                        </div>
 
-                                        <div class="form-group">
-                                            <label class="col-lg-3 control-label" for="{{ form.nationality.id_for_label }}">{{ form.nationality.label }}</label>
-                                            <div class="col-lg-9">
-                                                {{ form.nationality }}
-                                                <span class="text-danger">{{ form.nationality.errors }}</span>
+                                            <div class="form-group">
+                                                <label class="col-lg-3 control-label"
+                                                       for="{{ form.nationality.id_for_label }}">{{ form.nationality.label }}</label>
+                                                <div class="col-lg-9">
+                                                    {{ form.nationality }}
+                                                    <span class="text-danger">{{ form.nationality.errors }}</span>
 
+                                                </div>
                                             </div>
-                                        </div>
 
-                                        <div class="form-group">
-                                            <label class="col-lg-3 control-label" for="{{ form.level_of_education.id_for_label }}">{{ form.level_of_education.label }}</label>
-                                            <div class="col-lg-9">
-                                                {{ form.level_of_education }}
-                                                <span class="text-danger">{{ form.level_of_education.errors }}</span>
+                                            <div class="form-group">
+                                                <label class="col-lg-3 control-label"
+                                                       for="{{ form.level_of_education.id_for_label }}">{{ form.level_of_education.label }}</label>
+                                                <div class="col-lg-9">
+                                                    {{ form.level_of_education }}
+                                                    <span class="text-danger">{{ form.level_of_education.errors }}</span>
 
+                                                </div>
                                             </div>
-                                        </div>
 
-                                        <div class="form-group">
-                                            <label class="col-lg-3 control-label" for="{{ form.image.id_for_label }}">{{ form.image.label }}</label>
-                                            <div class="col-lg-9">
-                                                {{ form.image }}
-                                                <span class="text-danger">{{ form.image.errors }}</span>
-
+                                            <div class="form-group">
+                                                <label class="col-lg-3 control-label">Image</label>
+                                                <div class="col-lg-9">
+                                                    <input type="file" name="image" id="inputFile">
+                                                </div>
                                             </div>
-                                        </div>
 
-                                        <div class="form-group">
-                                            <label class="col-lg-3 control-label" for="{{ form.is_foreign_trainer.id_for_label }}">{{ form.is_foreign_trainer.label }}</label>
-                                            <div class="col-lg-9">
-                                                {{ form.is_foreign_trainer }}
-                                                <span class="text-danger">{{ form.is_foreign_trainer.errors }}</span>
+                                            <div class="form-group">
+                                                <label class="col-lg-3 control-label"
+                                                       for="{{ form.is_foreign_trainer.id_for_label }}">{{ form.is_foreign_trainer.label }}</label>
+                                                <div class="col-lg-9">
+                                                    {{ form.is_foreign_trainer }}
+                                                    <span class="text-danger">{{ form.is_foreign_trainer.errors }}</span>
 
+                                                </div>
                                             </div>
-                                        </div>
 
-                                        <div class="form-group">
-                                            <label class="col-lg-3 control-label" for="{{ form.is_guest_trainer.id_for_label }}">{{ form.is_guest_trainer.label }}</label>
-                                            <div class="col-lg-9">
-                                                {{ form.is_guest_trainer }}
-                                                <span class="text-danger">{{ form.is_guest_trainer.errors }}</span>
+                                            <div class="form-group">
+                                                <label class="col-lg-3 control-label"
+                                                       for="{{ form.is_guest_trainer.id_for_label }}">{{ form.is_guest_trainer.label }}</label>
+                                                <div class="col-lg-9">
+                                                    {{ form.is_guest_trainer }}
+                                                    <span class="text-danger">{{ form.is_guest_trainer.errors }}</span>
 
+                                                </div>
                                             </div>
-                                        </div>
 
 
-                                        <div class="form-group">
-                                            <label class="col-lg-3 control-label" for="{{ form.area_of_expertise.id_for_label }}">{{ form.area_of_expertise.label }}</label>
-                                            <div class="col-lg-9">
-                                                {{ form.area_of_expertise }}
-                                                <span class="text-danger">{{ form.area_of_expertise.errors }}</span>
+                                            <div class="form-group">
+                                                <label class="col-lg-3 control-label"
+                                                       for="{{ form.area_of_expertise.id_for_label }}">{{ form.area_of_expertise.label }}</label>
+                                                <div class="col-lg-9">
+                                                    {{ form.area_of_expertise }}
+                                                    <span class="text-danger">{{ form.area_of_expertise.errors }}</span>
 
+                                                </div>
                                             </div>
-                                        </div>
 
 
-                                        <div class="form-group">
-                                            <label class="col-lg-3 control-label" for="{{ form.list_of_expertise.id_for_label }}">{{ form.list_of_expertise.label }}</label>
-                                            <div class="col-lg-9">
-                                                {{ form.list_of_expertise }}
-                                                <span class="text-danger">{{ form.list_of_expertise.errors }}</span>
+                                            <div class="form-group">
+                                                <label class="col-lg-3 control-label"
+                                                       for="{{ form.list_of_expertise.id_for_label }}">{{ form.list_of_expertise.label }}</label>
+                                                <div class="col-lg-9">
+                                                    {{ form.list_of_expertise }}
+                                                    <span class="text-danger">{{ form.list_of_expertise.errors }}</span>
 
+                                                </div>
                                             </div>
-                                        </div>
 
 
-                                        <div class="form-group">
-                                            <label class="col-lg-3 control-label" for="{{ form.is_bteb_registered.id_for_label }}">{{ form.is_bteb_registered.label }}</label>
-                                            <div class="col-lg-9">
-                                                {{ form.is_bteb_registered }}
-                                                <span class="text-danger">{{ form.is_bteb_registered.errors }}</span>
+                                            <div class="form-group">
+                                                <label class="col-lg-3 control-label"
+                                                       for="{{ form.is_bteb_registered.id_for_label }}">{{ form.is_bteb_registered.label }}</label>
+                                                <div class="col-lg-9">
+                                                    {{ form.is_bteb_registered }}
+                                                    <span class="text-danger">{{ form.is_bteb_registered.errors }}</span>
 
+                                                </div>
                                             </div>
-                                        </div>
 
-                                        <div class="form-group">
-                                            <label class="col-lg-3 control-label" for="{{ form.bteb_register_number.id_for_label }}">{{ form.bteb_register_number.label }}</label>
-                                            <div class="col-lg-9">
-                                                {{ form.bteb_register_number }}
-                                                <span class="text-danger">{{ form.bteb_register_number.errors }}</span>
+                                            <div class="form-group">
+                                                <label class="col-lg-3 control-label"
+                                                       for="{{ form.bteb_register_number.id_for_label }}">{{ form.bteb_register_number.label }}</label>
+                                                <div class="col-lg-9">
+                                                    {{ form.bteb_register_number }}
+                                                    <span class="text-danger">{{ form.bteb_register_number.errors }}</span>
 
+                                                </div>
                                             </div>
+
+
+                                            <div style="border: 1px solid rgba(79, 148, 222, 0.77);background: rgba(79, 148, 222, 0.77);color: white;height: 35px;">
+                                                <p style="padding: 0.5%;font-size: 14px;">Course Map</p>
+                                            </div>
+                                            <table class="table table-responsive">
+                                                <tr>
+                                                    <td>
+                                                        <button type="button" name="button" class="btn btn-success"
+                                                                @click="AddCourseMap">
+                                                            <i class="fa fa-plus"></i>
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Sl No</th>
+                                                    <th>Venue</th>
+                                                    <th>Course</th>
+                                                </tr>
+                                                <tr v-for="(course_map , index) in CourseMapList">
+                                                    <td v-text="index+1"></td>
+                                                    <td>
+                                                        <select class="form-control" name="venue[]">
+                                                            <option></option>
+                                                            {% for venue_data in all_venue %}
+                                                                <option value="{{ venue_data.pk }}">{{ venue_data.venue_name }}</option>
+                                                            {% endfor %}
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <select class="form-control" name="course[]">
+                                                            <option></option>
+                                                            {% for course_data in all_course %}
+                                                                <option value="{{ course_data.pk }}">{{ course_data.course_name }}
+                                                                    - {{ course_data.course_code }}</option>
+                                                            {% endfor %}
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                            </table>
                                         </div>
-
-
-
-                                      <div style="border: 1px solid rgba(79, 148, 222, 0.77);background: rgba(79, 148, 222, 0.77);color: white;height: 35px;">
-                                        <p style="padding: 0.5%;font-size: 14px;">Course Map</p>
-                                      </div>
-                                      <table class="table table-responsive">
-                                          <tr>
-                                            <td>
-                                              <button type="button" name="button" class="btn btn-success" @click="AddCourseMap">
-                                                  <i class="fa fa-plus"></i>
-                                              </button>
-                                            </td>
-                                          </tr>
-                                          <tr>
-                                              <th>Sl No</th>
-                                              <th>Venue</th>
-                                              <th>Course</th>
-                                          </tr>
-                                          <tr v-for="(course_map , index) in CourseMapList">
-                                              <td v-text="index+1"></td>
-                                              <td>
-                                                <select class="form-control" name="venue[]">
-                                                  <option></option>
-                                                  {% for venue_data in all_venue %}
-                                                    <option value="{{venue_data.pk}}">{{venue_data.venue_name}}</option>
-                                                  {% endfor %}
-                                                </select>
-                                              </td>
-                                              <td>
-                                                <select class="form-control" name="course[]">
-                                                  <option></option>
-                                                  {% for course_data in all_course %}
-                                                    <option value="{{course_data.pk}}">{{course_data.course_name}} - {{course_data.course_code}}</option>
-                                                  {% endfor %}
-                                                </select>
-                                              </td>
-                                          </tr>
-                                      </table>
                                     </div>
+
+
                                 </div>
-
-
                             </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-success">Save</button>
                         </div>
 
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-success">Save</button>
-                    </div>
-
                 </div>
             </div>
-        </div>
-    </form>
+        </form>
 
-    <div class="panel panel-flat" style="margin-top: 5%;">
-        <div class="panel-heading">
-            <h5 class="panel-title"></h5>
-            <div class="heading-elements">
-                <ul class="icons-list">
-                    <li><a data-action="collapse"></a></li>
-                    <li><a data-action="reload"></a></li>
-                    <li><a data-action="close"></a></li>
-                </ul>
+        <div class="panel panel-flat" style="margin-top: 5%;">
+            <div class="panel-heading">
+                <h5 class="panel-title"></h5>
+                <div class="heading-elements">
+                    <ul class="icons-list">
+                        <li><a data-action="collapse"></a></li>
+                        <li><a data-action="reload"></a></li>
+                        <li><a data-action="close"></a></li>
+                    </ul>
+                </div>
+                <div id="DataTables_Table_2_filter" class="dataTables_filter">
+                    <select class="form-control">
+                        <option>--Select--</option>
+                        <option>10</option>
+                        <option>20</option>
+                        <option>30</option>
+                        <option>50</option>
+                    </select>
+                </div>
+                <div id="DataTables_Table_2_filter" class="dataTables_filter">
+                    <label>
+                        <input type="search" class="" placeholder="Type to filter..."
+                               aria-controls="DataTables_Table_2">
+                    </label>
+                </div>
+
             </div>
-            <div id="DataTables_Table_2_filter" class="dataTables_filter">
-                <select class="form-control">
-                    <option>--Select--</option>
-                    <option>10</option>
-                    <option>20</option>
-                    <option>30</option>
-                    <option>50</option>
-                </select>
-            </div>
-            <div id="DataTables_Table_2_filter" class="dataTables_filter">
-                <label>
-                    <input type="search" class="" placeholder="Type to filter..." aria-controls="DataTables_Table_2">
-                </label>
-            </div>
-
-        </div>
 
 
-        <table class="table datatable-pagination">
-            <thead>
-            <tr>
-                <th>Sl No</th>
-                <th>Trainer Name</th>
-                <th>Date Of Birth</th>
-                <th>National Id</th>
-                <th>Birth Reg No</th>
-                <th>Gender</th>
-                <th>Riligion</th>
-                <th>Mobile Number</th>
-                <th>Email</th>
-                <th class="text-center">Actions</th>
-            </tr>
-            </thead>
-            <tbody>
-            {% for trainer_data in all_trainer %}
-            <tr>
-                <td>{{ forloop.counter }}</td>
-                <td>{{ trainer_data.trainer_name }}</td>
-                <td>{{ trainer_data.date_of_birth }}</td>
-                <td>{{ trainer_data.national_id }}</td>
-                <td>{{ trainer_data.birth_reg_no }}</td>
-                <td>
-                    {% if True == trainer_data.gender %}
-                        Male
-                    {% else %}
-                        Female
-                    {% endif %}
-                </td>
-                <td>
-                    {% if trainer_data.religion == 1 %}
-                        Islam
-                    {% elif  trainer_data.religion == 2 %}
-                        Hindu
-                    {% elif  trainer_data.religion == 1%}
-                        Budha
-                    {% else %}
-                        Khristian
-                    {% endif %}
-                </td>
-                <td>{{ trainer_data.mobile_number }}</td>
-                <td>{{ trainer_data.email }}</td>
-                <td class="text-center">
-
-                    <a href="{% url "backend:venue_edit" pk=trainer_data.pk %}">
-                        <button class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
-                    </a>
-
-                    <a href="{% url "backend:venue_delete" pk=trainer_data.pk %}">
-                        <button class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></button>
-                    </a>
-
-                </td>
-            </tr>
-            {% empty %}
+            <table class="table datatable-pagination">
+                <thead>
                 <tr>
-                    <td rowspan="8">No Trainee Found</td>
+                    <th>Sl No</th>
+                    <th>Trainer Name</th>
+                    <th>Date Of Birth</th>
+                    <th>National Id</th>
+                    <th>Birth Reg No</th>
+                    <th>Gender</th>
+                    <th>Riligion</th>
+                    <th>Mobile Number</th>
+                    <th>Email</th>
+                    <th class="text-center">Actions</th>
                 </tr>
-            {% endfor %}
+                </thead>
+                <tbody>
+                {% for trainer_data in all_trainer %}
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td>{{ trainer_data.trainer_name }}</td>
+                        <td>{{ trainer_data.date_of_birth }}</td>
+                        <td>{{ trainer_data.national_id }}</td>
+                        <td>{{ trainer_data.birth_reg_no }}</td>
+                        <td>
+                            {% if True == trainer_data.gender %}
+                                Male
+                            {% else %}
+                                Female
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if trainer_data.religion == 1 %}
+                                Islam
+                            {% elif  trainer_data.religion == 2 %}
+                                Hindu
+                            {% elif  trainer_data.religion == 1 %}
+                                Budha
+                            {% else %}
+                                Khristian
+                            {% endif %}
+                        </td>
+                        <td>{{ trainer_data.mobile_number }}</td>
+                        <td>{{ trainer_data.email }}</td>
+                        <td class="text-center">
+
+                            <a href="{% url "backend:trainer_edit" pk=trainer_data.pk %}">
+                                <button class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                </button>
+                            </a>
+
+                            <a href="{% url "backend:trainer_delete" pk=trainer_data.pk %}">
+                                <button class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                            </a>
+
+                        </td>
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <td rowspan="8">No Trainee Found</td>
+                    </tr>
+                {% endfor %}
 
 
-            </tbody>
-        </table>
+                </tbody>
+            </table>
+        </div>
     </div>
-</div>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js"></script>
-<script type="text/javascript">
-new Vue({
-  el : "#trainer",
-  data() {
-    return {
-      CourseMapList :[
-        {
-          "venue_name" : "",
-          "course_name" : "",
-        }
-      ],
-    }
-  },
-  methods : {
-    AddCourseMap:function() {
-      const _this = this;
-      _this.CourseMapList.push({
-        "venue_name" : "",
-        "course_name" : "",
-      });
-    }
-  }
-})
-</script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js"></script>
+    <script type="text/javascript">
+        new Vue({
+            el: "#trainer",
+            data() {
+                return {
+                    CourseMapList: [
+                        {
+                            "venue_name": "",
+                            "course_name": "",
+                        }
+                    ],
+                }
+            },
+            methods: {
+                AddCourseMap: function () {
+                    const _this = this;
+                    _this.CourseMapList.push({
+                        "venue_name": "",
+                        "course_name": "",
+                    });
+                }
+            }
+        })
+    </script>
 
 {% endblock main_content %}

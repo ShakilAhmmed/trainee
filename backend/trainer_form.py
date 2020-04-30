@@ -23,7 +23,6 @@ class TrainerForm(forms.ModelForm):
 			"exp_years": forms.NumberInput(attrs = {"class": "form-control"}),
 			"nationality": forms.TextInput(attrs = {"class": "form-control"}),
 			"level_of_education": forms.Select(choices = EDUCATION_CHOICES, attrs = {"class": "form-control"}),
-			"image": forms.FileInput(attrs = {"class": "form-control"}),
 			"is_foreign_trainer": forms.CheckboxInput(),
 			"is_guest_trainer": forms.CheckboxInput(),
 			"area_of_expertise": forms.Textarea(attrs = {"class": "form-control", "rows": "2"}),

@@ -1,0 +1,326 @@
+{% extends "index.html" %}
+{% block main_content %}
+    <div id="trainer">
+        <form class="form-horizontal" method="POST" action="" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="modal-dialog" role="document">
+                <div class="modal-content" style="width: 1200px;margin-left: -40%;">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Add New Trainee</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="panel panel-flat">
+                                    <div class="panel-heading">
+                                        <div class="heading-elements">
+                                            <ul class="icons-list">
+                                                <li><a data-action="reload"></a></li>
+                                            </ul>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="panel-body">
+
+
+                                        <div class="form-group">
+
+                                            <center>
+                                                <img src="{{ image }}" style="width: 20%;">
+                                            </center>
+
+
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-lg-3 control-label"
+                                                   for="{{ form.trainer_name.id_for_label }}">{{ form.trainer_name.label }}</label>
+                                            <div class="col-lg-9">
+                                                {{ form.trainer_name }}
+                                                <span class="text-danger">{{ form.trainer_name.errors }}</span>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-lg-3 control-label"
+                                                   for="{{ form.national_id.id_for_label }}">{{ form.national_id.label }}</label>
+                                            <div class="col-lg-9">
+                                                {{ form.national_id }}
+                                                <span class="text-danger">{{ form.national_id.errors }}</span>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-lg-3 control-label"
+                                                   for="{{ form.date_of_birth.id_for_label }}">{{ form.date_of_birth.label }}</label>
+                                            <div class="col-lg-9">
+                                                {{ form.date_of_birth }}
+                                                <span class="text-danger">{{ form.date_of_birth.errors }}</span>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-lg-3 control-label"
+                                                   for="{{ form.birth_reg_no.id_for_label }}">{{ form.birth_reg_no.label }}</label>
+                                            <div class="col-lg-9">
+                                                {{ form.birth_reg_no }}
+                                                <span class="text-danger">{{ form.birth_reg_no.errors }}</span>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-lg-3 control-label"
+                                                   for="{{ form.gender.id_for_label }}">{{ form.gender.label }}</label>
+                                            <div class="col-lg-9">
+                                                {{ form.gender }}
+                                                <span class="text-danger">{{ form.gender.errors }}</span>
+
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <label class="col-lg-3 control-label"
+                                                   for="{{ form.religion.id_for_label }}">{{ form.religion.label }}</label>
+                                            <div class="col-lg-9">
+                                                {{ form.religion }}
+                                                <span class="text-danger">{{ form.religion.errors }}</span>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-lg-3 control-label"
+                                                   for="{{ form.mobile_number.id_for_label }}">{{ form.mobile_number.label }}</label>
+                                            <div class="col-lg-9">
+                                                {{ form.mobile_number }}
+                                                <span class="text-danger">{{ form.mobile_number.errors }}</span>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-lg-3 control-label"
+                                                   for="{{ form.email.id_for_label }}">{{ form.email.label }}</label>
+                                            <div class="col-lg-9">
+                                                {{ form.email }}
+                                                <span class="text-danger">{{ form.email.errors }}</span>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-lg-3 control-label"
+                                                   for="{{ form.exp_years.id_for_label }}">{{ form.exp_years.label }}</label>
+                                            <div class="col-lg-9">
+                                                {{ form.exp_years }}
+                                                <span class="text-danger">{{ form.exp_years.errors }}</span>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-lg-3 control-label"
+                                                   for="{{ form.nationality.id_for_label }}">{{ form.nationality.label }}</label>
+                                            <div class="col-lg-9">
+                                                {{ form.nationality }}
+                                                <span class="text-danger">{{ form.nationality.errors }}</span>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-lg-3 control-label"
+                                                   for="{{ form.level_of_education.id_for_label }}">{{ form.level_of_education.label }}</label>
+                                            <div class="col-lg-9">
+                                                {{ form.level_of_education }}
+                                                <span class="text-danger">{{ form.level_of_education.errors }}</span>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-lg-3 control-label">Image</label>
+                                            <div class="col-lg-9">
+                                               <input type="file" name="image" id="inputFile">
+
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-lg-3 control-label"
+                                                   for="{{ form.is_foreign_trainer.id_for_label }}">{{ form.is_foreign_trainer.label }}</label>
+                                            <div class="col-lg-9">
+                                                {{ form.is_foreign_trainer }}
+                                                <span class="text-danger">{{ form.is_foreign_trainer.errors }}</span>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-lg-3 control-label"
+                                                   for="{{ form.is_guest_trainer.id_for_label }}">{{ form.is_guest_trainer.label }}</label>
+                                            <div class="col-lg-9">
+                                                {{ form.is_guest_trainer }}
+                                                <span class="text-danger">{{ form.is_guest_trainer.errors }}</span>
+
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <label class="col-lg-3 control-label"
+                                                   for="{{ form.area_of_expertise.id_for_label }}">{{ form.area_of_expertise.label }}</label>
+                                            <div class="col-lg-9">
+                                                {{ form.area_of_expertise }}
+                                                <span class="text-danger">{{ form.area_of_expertise.errors }}</span>
+
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <label class="col-lg-3 control-label"
+                                                   for="{{ form.list_of_expertise.id_for_label }}">{{ form.list_of_expertise.label }}</label>
+                                            <div class="col-lg-9">
+                                                {{ form.list_of_expertise }}
+                                                <span class="text-danger">{{ form.list_of_expertise.errors }}</span>
+
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <label class="col-lg-3 control-label"
+                                                   for="{{ form.is_bteb_registered.id_for_label }}">{{ form.is_bteb_registered.label }}</label>
+                                            <div class="col-lg-9">
+                                                {{ form.is_bteb_registered }}
+                                                <span class="text-danger">{{ form.is_bteb_registered.errors }}</span>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-lg-3 control-label"
+                                                   for="{{ form.bteb_register_number.id_for_label }}">{{ form.bteb_register_number.label }}</label>
+                                            <div class="col-lg-9">
+                                                {{ form.bteb_register_number }}
+                                                <span class="text-danger">{{ form.bteb_register_number.errors }}</span>
+
+                                            </div>
+                                        </div>
+
+
+                                        <div style="border: 1px solid rgba(79, 148, 222, 0.77);background: rgba(79, 148, 222, 0.77);color: white;height: 35px;">
+                                            <p style="padding: 0.5%;font-size: 14px;">Course Map</p>
+                                        </div>
+                                        <table class="table table-responsive">
+                                            <tr>
+                                                <td>
+                                                    <button type="button" name="button" class="btn btn-success"
+                                                            @click="AddCourseMap">
+                                                        <i class="fa fa-plus"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>Venue</th>
+                                                <th>Course</th>
+                                                <th>Action</th>
+                                            </tr>
+                                            {% for trainer_course_map_data in trainer_course_map %}
+                                                <tr v-for="(course_map , index) in CourseMapList">
+                                                    <td>
+                                                        <select class="form-control" name="venue[]">
+                                                            <option value="{{ trainer_course_map_data.venue.pk }}">{{ trainer_course_map_data.venue.venue_name }}</option>
+                                                            {% for venue_data in all_venue %}
+                                                                <option value="{{ venue_data.pk }}">{{ venue_data.venue_name }}</option>
+                                                            {% endfor %}
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <select class="form-control" name="course[]">
+                                                            <option value="{{ trainer_course_map_data.course.pk }}">{{ trainer_course_map_data.course.course_name }}</option>
+                                                            {% for course_data in all_course %}
+                                                                <option value="{{ course_data.pk }}">{{ course_data.course_name }}
+                                                                    - {{ course_data.course_code }}</option>
+                                                            {% endfor %}
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <button class="btn btn-danger" type="button"
+                                                                @click="Remove(index)"><i class="fa fa-trash"></i>
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                            {% endfor %}
+                                        </table>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-success">Save</button>
+                    </div>
+
+                </div>
+            </div>
+    </div>
+    </form>
+
+    </div>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js"></script>
+    <script type="text/javascript">
+        new Vue({
+            el: "#trainer",
+            data() {
+                return {
+                    CourseMapList: [
+                        {
+                            "venue_name": "",
+                            "course_name": "",
+                        }
+                    ],
+                }
+            },
+            methods: {
+                AddCourseMap: function () {
+                    const _this = this;
+                    _this.CourseMapList.push({
+                        "venue_name": "",
+                        "course_name": "",
+                    });
+                },
+                Remove: function (index) {
+                    const _this = this;
+                    _this.CourseMapList.splice(index, 1);
+                },
+                GetCourseMap:function () {
+                    {#const _this = this;#}
+                    {#{% for trainer_course_map_data in trainer_course_map %}#}
+                    {#    _this.CourseMapList.push(#}
+                    {##}
+                    {#    );#}
+                    {#{% endfor %}#}
+                }
+            },
+            mounted() {
+
+            }
+        })
+    </script>
+
+{% endblock main_content %}
